@@ -751,16 +751,6 @@ span.spec-flag img {
     ]
   }
 }
-
-// Email reveal — assemble address from data attributes to block scrapers
-document.querySelectorAll('[data-e]').forEach(el => {
-  const addr = el.getAttribute('data-e') + '@' + el.getAttribute('data-d');
-  el.textContent = addr;
-});
-document.querySelectorAll('[data-mailto]').forEach(el => {
-  const addr = el.getAttribute('data-mailto');
-  el.setAttribute('href', 'mailto:' + addr);
-});
 </script>
 <!-- Google Analytics 4 — replace G-XXXXXXXXXX with your Measurement ID -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -1178,6 +1168,14 @@ function handleSignup(e) {
   document.getElementById('signupForm').style.display = 'none';
   document.getElementById('signupSuccess').style.display = 'block';
 }
+
+// Email reveal — assemble address from data attributes to block scrapers
+document.querySelectorAll('[data-e]').forEach(el => {
+  el.textContent = el.getAttribute('data-e') + '@' + el.getAttribute('data-d');
+});
+document.querySelectorAll('[data-mailto]').forEach(el => {
+  el.setAttribute('href', 'mailto:' + el.getAttribute('data-mailto'));
+});
 </script>
 </body>
 </html>
