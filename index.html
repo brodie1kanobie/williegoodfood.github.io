@@ -556,6 +556,29 @@ nav{
 }
 .blog-card-link:hover { color: var(--warm-brown); }
 
+/* BACK TO TOP */
+.back-to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  background: var(--charcoal);
+  color: var(--off-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, background 0.3s;
+  z-index: 299;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.back-to-top:hover { background: var(--warm-brown); }
+
 /* STICKY MOBILE CTA */
 .sticky-cta {
   display: none;
@@ -1490,6 +1513,8 @@ iframe { max-width: 100%; }
     <li><a href="#testimonials" onclick="closeMenu()">Reviews</a></li>
     <li><a href="#gallery" onclick="closeMenu()">Portfolio</a></li>
     <li><a href="#signup" onclick="closeMenu()">Newsletter</a></li>
+    <li><a href="#blog" onclick="closeMenu()">Recipes</a></li>
+    <li><a href="#reviews" onclick="closeMenu()">Reviews</a></li>
     <li><a href="https://calendly.com/williegoodfood/30min" target="_blank" class="nav-cta" onclick="closeMenu()">Book a Consult</a></li>
   </ul>
 </nav>
@@ -1745,7 +1770,7 @@ iframe { max-width: 100%; }
   <div class="testimonials-header reveal">
     <p class="section-eyebrow">Client Reviews</p>
     <h2 class="testimonials-heading">What people are <em>saying</em></h2>
-    <p class="testimonials-sub">Real words from real clients — Chef Will would love to add your story to this list.</p>
+    <p class="testimonials-sub">Trusted by clients across Hampton Roads — Virginia Beach, Norfolk, Chesapeake & Williamsburg.</p>
   </div>
   <div class="testimonials-grid">
     <div class="testimonial-card reveal">
@@ -1766,7 +1791,7 @@ iframe { max-width: 100%; }
         <div class="testimonial-avatar">J.R.</div>
         <div>
           <div class="testimonial-name">James R.</div>
-          <div class="testimonial-loc">Richmond, VA</div>
+          <div class="testimonial-loc">Chesapeake, VA</div>
         </div>
       </div>
     </div>
@@ -1982,7 +2007,7 @@ iframe { max-width: 100%; }
         <div class="contact-link-icon"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f4de.svg" class="emoji-img" alt="Phone"/></div>
         (706) 251-4370
       </a>
-      <a href="https://mail.google.com/mail/?view=cm&to=WillieGoodFood@gmail.com" target="_blank" class="contact-link-item">
+      <a href="mailto:WillieGoodFood@gmail.com" class="contact-link-item">
         <div class="contact-link-icon"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/2709.svg" class="emoji-img" alt="Email"/></div>
         WillieGoodFood@gmail.com
       </a>
@@ -2086,6 +2111,16 @@ function closeMenu() {
   document.body.style.overflow = '';
 }
 
+// Back to top button
+const backToTop = document.getElementById('backToTop');
+if (backToTop) {
+  window.addEventListener('scroll', () => {
+    const show = window.scrollY > 600;
+    backToTop.style.opacity = show ? '1' : '0';
+    backToTop.style.pointerEvents = show ? 'auto' : 'none';
+  }, { passive: true });
+}
+
 // Sticky CTA — show after scrolling past hero
 const stickyCta = document.getElementById('stickyCta');
 if (stickyCta) {
@@ -2114,6 +2149,9 @@ const obs = new IntersectionObserver(entries => {
 }, {threshold: 0.08});
 reveals.forEach(el => obs.observe(el));
 </script>
+
+<!-- Back to Top -->
+<a href="#top" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
 
 <!-- Sticky mobile CTA -->
 <a href="https://calendly.com/williegoodfood/30min" target="_blank" class="sticky-cta" id="stickyCta" aria-label="Book a Consultation">
