@@ -47,9 +47,13 @@
     .blog-cta p { color: var(--butter); margin-bottom: 28px; font-size: 0.95rem; }
     .btn-cta { display: inline-block; background: var(--sage); color: #fff; padding: 14px 36px; border-radius: 4px; text-decoration: none; font-size: 0.9rem; letter-spacing: 0.08em; font-weight: 600; transition: background 0.3s; }
     .btn-cta:hover { background: var(--warm-brown); }
-    .blog-back { text-align: center; padding: 40px; }
+    .blog-back { text-align: center; padding: 24px 40px 0; }
     .blog-back a { color: var(--sage); text-decoration: none; font-size: 0.9rem; }
     .blog-back a:hover { text-decoration: underline; }
+    .blog-social-strip { display: flex; justify-content: center; align-items: center; gap: 32px; padding: 28px 40px 48px; flex-wrap: wrap; }
+    .blog-social-strip a { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: #6b6b6b; font-size: 0.88rem; font-weight: 500; transition: color 0.2s; }
+    .blog-social-strip a:hover { color: var(--charcoal); }
+    .blog-social-strip svg { width: 24px; height: 24px; flex-shrink: 0; }
     @media (max-width: 600px) {
       .blog-nav { padding: 14px 20px; }
       .blog-hero { padding: 48px 20px 40px; }
@@ -155,6 +159,28 @@
 
 <div class="blog-back">
   <a href="https://williegoodfood.org/#community">← Back to all recipes</a>
+</div>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <radialGradient id="ig-grad" cx="30%" cy="107%" r="150%">
+      <stop offset="0%"  stop-color="#fdf497"/>
+      <stop offset="45%" stop-color="#fd5949"/>
+      <stop offset="60%" stop-color="#d6249f"/>
+      <stop offset="90%" stop-color="#285AEB"/>
+    </radialGradient>
+  </defs>
+</svg>
+
+<div class="blog-social-strip">
+  <a href="https://instagram.com/williegoodfood" target="_blank" rel="noopener">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-label="Instagram"><path fill="url(#ig-grad)" d="M12 2.2c3.2 0 3.6.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.25.07 1.65.07 4.81s-.01 3.56-.07 4.81c-.15 3.23-1.67 4.77-4.92 4.92-1.25.06-1.64.07-4.85.07s-3.6-.01-4.85-.07C3.9 21.59 2.36 20.05 2.2 16.81 2.14 15.56 2.13 15.17 2.13 12s.01-3.56.07-4.81C2.36 3.9 3.9 2.36 7.15 2.2c1.25-.06 1.64-.07 4.85-.07zM12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.7.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.35 2.63 6.78 6.98 6.98C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c4.35-.2 6.78-2.63 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95C23.73 2.7 21.3.27 16.95.07 15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32A6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
+    @williegoodfood
+  </a>
+  <a href="https://youtube.com/@williegoodfood" target="_blank" rel="noopener">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-label="YouTube"><path fill="#FF0000" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8z"/><path fill="#fff" d="M9.7 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+    @williegoodfood
+  </a>
 </div>
 
 </body>
